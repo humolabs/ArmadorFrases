@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Armador de Frases</string>
+
+    <string-array name="columna1">
+        <item>Patron,</item>
+        <item>Perdón,</item>
+        <item>Buen dia,</item>
+        <item>Buenas noches, </item>
+        <item>Señor</item>
+        <item>Hola linda</item>
+        <item>Hola!</item>
+        <item>Querido</item>
+    </string-array>
+
+    <string-array name="columna2">
+        <item>hoy no voy al trabajo</item>
+        <item>hoy no puedo ir</item>
+        <item>hoy no iré al trabajo</item>
+        <item>mañana no podré ir al trabajo</item>
+        <item>se me complica poder ir hoy</item>
+        <item>hoy no asistiré</item>
+        <item>no voy</item>
+        <item>no podré ir</item>
+    </string-array>
+
+    <string-array name="columna4">
+        <item>se me inundo la casa</item>
+        <item>me levante con mucho dolor de panza</item>
+        <item>viene la gente de arnet a arreglar internet</item>
+        <item>viene el gasista</item>
+        <item>se murió una tia mia</item>
+        <item>se enfermó mi nene</item>
+        <item>se enfermó mi nena</item>
+        <item>debo ir al abogado</item>
+    </string-array>
+
+</resources>
