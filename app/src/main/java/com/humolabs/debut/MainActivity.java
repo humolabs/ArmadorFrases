@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
@@ -107,6 +108,7 @@ public class MainActivity extends AppCompatActivity {
         // custom dialog
         final Dialog dialog = new Dialog(context);
         dialog.setContentView(R.layout.resultado);
+        dialog.setTitle("Hora de mentir...");
         // set the custom dialog components - text, image and button
         TextView text = (TextView) dialog.findViewById(R.id.text);
         text.setText(strResultado);
@@ -135,26 +137,27 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), items[item], Toast.LENGTH_SHORT).show();
                         Intent sendIntent = new Intent();
 
-                        if(items[item]=="Whatsapp"){
+                        if (items[item] == "Whatsapp") {
                             sendIntent.setAction(Intent.ACTION_SEND);
                             sendIntent.putExtra(Intent.EXTRA_TEXT, strResultado);
                             sendIntent.setPackage("com.whatsapp");
                             sendIntent.setType("text/plain");
                             startActivity(sendIntent);
-                        }else if (items[item]=="Gmail"){
+                        } else if (items[item] == "Gmail") {
                             Intent send = new Intent(Intent.ACTION_SENDTO);
+                            String strResultadogmail = strResultado + "\n\n Saludos.";
                             String uriText = "mailto:" + Uri.encode("email@gmail.com") +
                                     "?subject=" + Uri.encode("Ausencia") +
-                                    "&body=" + Uri.encode(strResultado);
+                                    "&body=" + Uri.encode(strResultadogmail);
                             Uri uri = Uri.parse(uriText);
 
                             send.setData(uri);
-                            startActivity(Intent.createChooser(send, "Send mail..."));
-                        }else{
+                            startActivity(Intent.createChooser(send, "Enviar mail..."));
+                        } else {
                             Intent smsIntent = new Intent(android.content.Intent.ACTION_VIEW);
                             smsIntent.setType("vnd.android-dir/mms-sms");
-                            smsIntent.putExtra("address","busque su contacto...");
-                            smsIntent.putExtra("sms_body",strResultado);
+                            smsIntent.putExtra("address", "busque su contacto...");
+                            smsIntent.putExtra("sms_body", strResultado);
                             startActivity(smsIntent);
                         }
 
